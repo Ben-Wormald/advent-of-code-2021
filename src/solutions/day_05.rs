@@ -66,11 +66,12 @@ pub fn solve_part_one(input: &str) -> usize {
     lines.into_iter()
         .filter(|line| !line.is_diagonal())
         .for_each(|line| {
-            line.all_points().into_iter()
-            .for_each(|point| {
-                    let cover = covers.entry(point).or_insert(0);
-                    *cover += 1;
-                });
+            line
+                .all_points().into_iter()
+                .for_each(|point| {
+                        let cover = covers.entry(point).or_insert(0);
+                        *cover += 1;
+                    });
         });
 
     covers.into_iter()
@@ -85,11 +86,12 @@ pub fn solve(input: &str) -> usize {
 
     lines.into_iter()
         .for_each(|line| {
-            line.all_points().into_iter()
-            .for_each(|point| {
-                    let cover = covers.entry(point).or_insert(0);
-                    *cover += 1;
-                });
+            line
+                .all_points().into_iter()
+                .for_each(|point| {
+                        let cover = covers.entry(point).or_insert(0);
+                        *cover += 1;
+                    });
         });
 
     covers.into_iter()
