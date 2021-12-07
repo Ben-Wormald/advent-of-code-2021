@@ -37,9 +37,7 @@ pub fn solve(input: &str) -> isize {
             Some(min_f) => if fuel < min_f {
                 min_fuel = Some(fuel);
             },
-            None => {
-                min_fuel = Some(fuel);
-            },
+            None => min_fuel = Some(fuel),
         }
     }
 
